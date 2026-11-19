@@ -12,7 +12,7 @@ separate priority sets. **All data is made up.**
 No dependencies, only Node.js.
 
 1. `node test.js` — engine tests; should end with "all passed".
-2. `node build.js` — rebuilds `index.html` from `src/`. **Commit the rebuilt `index.html`**: Vercel serves it as it is and runs no build.
+2. `node build.js` — rebuilds `index.html` from `src/`. **Commit the rebuilt `index.html`**: Vercel serves it as it is and runs no build. (There is deliberately no `build` script in package.json: if there were, Vercel would run it and then look for a `public` folder.)
 3. Open `index.html` in a browser to try it.
 
 Edit files in `src/` (template, styles, engine, app), rebuild, reload.

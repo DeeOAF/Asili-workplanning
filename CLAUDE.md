@@ -1,6 +1,6 @@
 # Work Planning prototype (Asili field cascade)
 
-Single-file HTML prototype, its own repository and Vercel project (the Farm Planner is a separate site). `node build.js` stitches src/template.html + style.css + engine.js + app.js into index.html (served by Vercel at the site root; commit it after every change) and work-planning.artifact.html (the shareable claude.ai page: no doctype/head, logo embedded). The shared page is https://claude.ai/artifact/C7E1PDLzaTQNXqHvxHhCfE; after a change, rebuild and republish work-planning.artifact.html to that URL so the link stays the same. `node test.js` runs the engine tests. No dependencies.
+Single-file HTML prototype, its own repository and Vercel project (the Farm Planner is a separate site). `node build.js` stitches src/template.html + style.css + engine.js + app.js into index.html (served by Vercel at the site root; commit it after every change) and work-planning.artifact.html (the shareable claude.ai page: no doctype/head, logo embedded). The shared page is https://claude.ai/artifact/C7E1PDLzaTQNXqHvxHhCfE; after a change, rebuild and republish work-planning.artifact.html to that URL so the link stays the same. `node test.js` runs the engine tests. No dependencies. Never add a `build` script to package.json: Vercel would run it and then fail looking for a `public` folder; the site is the committed index.html.
 
 ## Rules that must hold
 - All data is generated (engine.js generateData, hashRng for deterministic history). Never present it as real. Keep the "made-up data" label.
